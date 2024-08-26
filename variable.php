@@ -58,11 +58,11 @@
                                 break;
                         }
 
-                        $formatoMoneda = new NumberFormatter('es_CO', NumberFormatter::CURRENCY);
-                        $formato_moneda = $formatoMoneda->formatCurrency($salarioVariable, 'COP');
+                        $formatoMoneda = number_format($salarioVariable, 0, ',', '.');
+                        
                         ?>
                         <h5>Hola, <?php echo $tipoCargo; ?></h5>
-                        <p class="lead">Has ganado <strong><?php echo $formato_moneda; ?></strong> con base en un porcentaje de cumplimiento del <?php echo $porcentajeVariable; ?>%.</p>
+                        <p class="lead">Has ganado <strong><?php echo $formatoMoneda; ?></strong> con base en un porcentaje de cumplimiento del <?php echo $porcentajeVariable; ?>%.</p>
                     </div>
                     <div class="card-footer">
                         <a href="index.html" class="btn btn-primary">Volver</a>
